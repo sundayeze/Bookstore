@@ -1,4 +1,4 @@
-package com.interswitch.bookstore.utility;
+package com.interswitch.bookstore.config;
 
 import com.interswitch.bookstore.model.AppUser;
 import com.interswitch.bookstore.model.Book;
