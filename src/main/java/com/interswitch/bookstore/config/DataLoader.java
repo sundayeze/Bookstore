@@ -26,9 +26,8 @@ public class DataLoader {
             bookRepository.save(new Book(null, "It", Genre.HORROR, "978-0-4511-7467-0", "Stephen King", 1986, 5000));
             bookRepository.save(new Book(null, "And Then There Were None", Genre.MYSTERY, "978-0-0620-7381-4", "Agatha Christie", 1939, 3300));
 
-            // Load demo users
+            // === demo user ===
             userRepository.save(new AppUser(null, "Sunday Eze", "sunday@gmail.com", "password123", null, null));
-            userRepository.save(new AppUser(null, "David John", "david@gmail.com", "pass1", null, null));
         };
     }
 

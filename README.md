@@ -36,7 +36,7 @@ Book Management
 
 Shopping Cart  
 - POST /cart/add - Add a book to the cart  
-- GET /cart/cartId -  View cart contents  
+- GET /cart/{userId} -  View cart contents  
 
 Checkout & Purchase History  
 - POST /checkout - Checkout via Web, USSD, or Transfer  

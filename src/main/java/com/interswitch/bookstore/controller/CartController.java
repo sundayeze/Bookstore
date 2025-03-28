@@ -26,10 +26,10 @@ public class CartController {
         }
     }
 
-    @GetMapping("/{cartId}")
-    public ResponseEntity<?> viewCart(@PathVariable Long cartId) {
+    @GetMapping("/{userId}")
+    public ResponseEntity<?> viewCart(@PathVariable Long userId) {
         try {
-            Cart cart = cartService.viewCart(cartId);
+            Cart cart = cartService.viewCart(userId);
             return ResponseEntity.ok(cart);
         } catch (NotFoundException e) {
             return ResponseEntity.status(404).body(e.getMessage());

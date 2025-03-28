@@ -101,11 +101,23 @@ public class CartService {
 //    }
 
 
-    public Cart viewCart(Long cartId) {
+//    public Cart viewCart(Long cartId) {
+//
+//        return cartRepository.findById(cartId)
+//                .orElseThrow(() -> new NotFoundException("Cart not found with ID: " + cartId));
+//    }
 
-        return cartRepository.findById(cartId)
-                .orElseThrow(() -> new NotFoundException("Cart not found with ID: " + cartId));
+    public Cart viewCart(Long userId) {
+        return cartRepository.findByUserId(userId)
+                .map(cart -> {
+                    if (cart.isPaid()) {
+                        throw new NotFoundException("No unpaid cart available");
+                    }
+                    return cart;
+                })
+                .orElseThrow(() -> new NotFoundException("No Cart found for User"));
     }
+
 
 //    public Cart findByIdAndUserId(Long cartId, Long userId) {
 //        return cartRepository.findByIdAndUserId(cartId, userId)
